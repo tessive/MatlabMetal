@@ -1,0 +1,43 @@
+#include <metal_stdlib>
+
+using namespace metal;
+
+
+
+kernel void zerobuff(
+	device float *buffer [[ buffer(0) ]],
+    uint index[[ thread_position_in_grid ]])
+{
+        buffer[index] = 0.0f;
+}
+
+
+kernel void accumulate(
+    device float *vA [[ buffer(0) ]],
+    constant float *vB [[ buffer(1) ]],
+    uint id[[ thread_position_in_grid ]])
+{
+    vA[id] += vB[id];
+}
+
+
+kernel void maxval(
+    device float *vA [[ buffer(0) ]],
+    constant float *vB [[ buffer(1) ]],
+    uint id[[ thread_position_in_grid ]])
+{
+    vA[id] = max( vA[id], vB[id] );
+}
+
+
+kernel void scaleaccum(
+    device float *vA [[ buffer(0) ]],
+    constant float *vB [[ buffer(1) ]],
+    constant float *scaleval[[ buffer(2) ]],
+    uint id[[ thread_position_in_grid ]])
+{
+    vA[id] += vB[id] * scaleval[0];
+}
+
+    
+
