@@ -1,4 +1,4 @@
-# MatlabMetal
+# MATLABMetal
 Apple Metal GPU processing toolbox for MATLAB on macOS.
 
 Matlab runs extremely well on the new Apple Silicon Macs, but if you want the best possible performance from these new processors, the real number-crunching power is on their onboard GPU cores. This toolbox allows easy and direct access to the macOS Metal API right from the MATLAB command window. It works on Intel and Apple Silicon Macs, and allows you to choose which GPU to use (if there are multiple). It wraps up the Apple Objective C API into prebuilt MEX files, and then further wraps the Metal API class structure into native MATLAB classes to handle all the lifecycle details. 
@@ -32,5 +32,7 @@ This library has been designed to work with MATLAB Coder to deploy fully-compile
 
 # Contributing
 If you have features or extensions you'd like to see, or have made improvements to this library, please submit issues or pull requests. I'd love to make this toolbox more useful. 
+
+[![View MATLABMetal on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/135912-matlabmetal)
 
 Enjoy!
